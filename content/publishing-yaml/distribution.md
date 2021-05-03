@@ -95,11 +95,11 @@ You can override the publishing track specified in the configuration file using 
 
 ### App Store Connect
 
-Codemagic enables you to automatically publish your iOS app to App Store Connect for beta testing with TestFlight or distributing the app to users via App Store.
+Codemagic enables you to automatically publish your iOS or macOS app to App Store Connect for beta testing with TestFlight or distributing the app to users via App Store.
 
 ```yaml
 publishing:
-  app_store_connect:                  # For iOS app
+  app_store_connect:                  # For iOS or macOS app
     apple_id: name@example.com        # Email address used for login
     password: Encrypted(...)          # App-specific password
 ```
@@ -292,7 +292,7 @@ Publishing web applications to Firebase Hosting With Codemagic publishing to Fir
 
 1. To get started with adding Firebase Hosting to Codemagic, you will need to obtain your Firebase token. In order to do that, run `firebase login:ci` in your local terminal. 
 2. After running the command, your default browser should prompt for authorization to your Firebase project - when access is granted, the necessary token will appear in your terminal.
-3. Copy and [encrypt](https://github.com/codemagic-ci-cd/codemagic-docs/blob/master/content/building/encrypting) the token using the Codemagic UI.
+3. Copy and [encrypt](../building/encrypting/) the token using the Codemagic UI.
 4. Add your encrypted token to your .yaml file by setting it under your environment variables with the name `FIREBASE_TOKEN`.
 5. Create a new script for publishing to Firebase Hosting in your scripts section of the .yaml file and add it right after the build step
 
